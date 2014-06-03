@@ -11,6 +11,8 @@ if [ ! -e "/usr/local/lib/libzmq.so" ]; then
 	./configure
 	make
 	sudo make install
+	// @see https://github.com/JustinTulloss/zeromq.node/issues/15#issuecomment-626646
+	sudo ldconfig
 else
 	echo "libzmq already installed based on found: /usr/local/lib/libzmq.so"
 fi
