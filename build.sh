@@ -2,6 +2,11 @@
 
 # TODO: Don't install globally?
 
+if [ "$PIO_FORCE" != "" ]; then
+	echo "Force re-compile ..."
+	sudo rm -f /usr/local/lib/libzmq.so
+fi
+
 if [ ! -e "/usr/local/lib/libzmq.so" ]; then
 	sudo apt-get install -y --force-yes make libtool autoconf automake uuid-dev build-essential
 
